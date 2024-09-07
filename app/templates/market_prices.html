@@ -7,7 +7,7 @@
 	<p> This page will display the market price of crops and livestock </a>
 	<h2>Market prices</h2>
 	<ul>
-		{% for price in market_prices %}
+		{% for price in prices %}
 			<li> Crop: {{ price.crop.name }} - Price: {{ price.price }} - Date: {{ price.date }} </li>
 			{% endfor %}
 	</ul>
