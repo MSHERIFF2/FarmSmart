@@ -38,6 +38,7 @@ nav a:hover {
 main {
     padding: 20px;
     color: black; /* Black font for main content */
+    height: 600px;
 }
 
 /* Buttons */
