@@ -38,7 +38,7 @@ nav a:hover {
 main {
     padding: 20px;
     color: black; /* Black font for main content */
-    height: 600px;
+    height: 500px;
 }
 
 /* Buttons */
@@ -67,7 +67,7 @@ footer {
     padding: 10px;
     text-align: center;
     color: white; /* White font color */
-    position: sticky;
+    
     bottom: 0;
     width: 100%;
 }
