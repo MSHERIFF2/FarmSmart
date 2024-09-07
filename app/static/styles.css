@@ -35,7 +35,7 @@ nav a:hover {
 }
 
 /* Main Content */
-.main-content {
+main {
     padding: 20px;
     color: black; /* Black font for main content */
 }
@@ -59,3 +59,15 @@ button:hover {
         flex-direction: column;
     }
 }
+
+/* Footer styling */
+footer {
+    background-color: #2E7D32; /* Primary green */
+    padding: 10px;
+    text-align: center;
+    color: white; /* White font color */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
