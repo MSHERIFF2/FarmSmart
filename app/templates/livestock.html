@@ -1,0 +1,14 @@
+<!-- templates/livestock.html -->
+{% extends "base.html" %}
+{% block title %}Livestock{% endblock %}
+
+{% block content %}
+	<h2>Livestock List</h2>
+	<ul>
+		{% for livestock in livestock_list %}
+		<li>
+			{{ livestock.name }} - {{ livestock.market_price.price }}
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

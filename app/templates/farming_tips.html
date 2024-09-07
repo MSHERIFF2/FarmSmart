@@ -1,0 +1,23 @@
+<!-- templates/farm_tips.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Farming Tips{% endblock %}
+
+{% block content %}
+<h2> Farming TIps </h2>
+<ul> 
+	{% for tip in tips %}
+		<li> 
+			<h3>{{ tip.title }}</h3>
+			<p>{{ tip.content }}</p>
+			<p>Date: {{ tip.date }}</p>
+		</li>
+	{% endfor %}
+</ul>
+
+
+
+
+
+{% endblock %}

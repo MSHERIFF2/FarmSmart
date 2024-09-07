@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Weather Forecast{% endblock %}
+
+{% block content %}
+   <h2>Weather Forecast</h2>
+   <ul>
+	   {% for forecast in forecasts %}
+	   <li>Date: {{ forecast.forecast_date }} - Temperature: {{ forecast.temperature }}°C - Condition: {{ forecast.condition }}
+	   </li>
+	   {% endfor %}
+																				        </ul>
+{% endblock %}

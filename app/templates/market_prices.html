@@ -1,0 +1,15 @@
+<!-- template/market_price.html -->
+{% extends "base.html" %}
+
+{% block title %}Market price{% endblock %}
+
+{% block content %}
+	<p> This page will display the market price of crops and livestock </a>
+	<h2>Market prices</h2>
+	<ul>
+		{% for price in market_prices %}
+			<li> Crop: {{ price.crop.name }} - Price: {{ price.price }} - Date: {{ price.date }} </li>
+			{% endfor %}
+	</ul>
+		
+{% endblock %}
