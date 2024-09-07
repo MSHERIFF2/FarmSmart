@@ -5,7 +5,7 @@
 {% block content %}
 	<h2>Livestock List</h2>
 	<ul>
-		{% for livestock in livestock_list %}
+		{% for livestock in livestocks %}
 		<li>
 			{{ livestock.name }} - {{ livestock.market_price.price }}
 		</li>
