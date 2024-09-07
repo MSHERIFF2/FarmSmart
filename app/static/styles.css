@@ -1,34 +1,61 @@
-*{
-	margin: 0;
-	box-sizing: border-box;
-	padding: 0;
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background to contrast with green */
+    color: #333; /* Default font color */
 }
 
-nav{
-	background: green;
-	color:  white;
-	font-family: Arial, san-serif;
-	max-width: 100%;
-	height: 50px;
-	padding: 10px 20px;
+/* Header */
+header {
+    background-color: #2E7D32; /* Primary Green */
+    padding: 10px;
+    text-align: center;
+    color: white; /* White font color for contrast */
 }
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #388E3C; /* Secondary Green */
+}
+
 nav a {
-	text-decoration: none;
-	font-size: 16px;
-	margin-right: 10px;
-	text-align: right;
-	color: white;
+    color: white; /* White font color */
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
 }
 
-nav a:hover{
-	cursor: pointer;
-	animation:ease-out
-	transition: 18px ;
-}
-footer{
-	height: 200px;
-	color: white;
-	background: green;
-	float: bottom;
+nav a:hover {
+    background-color: #66BB6A; /* Lighter green for hover effect */
+    color: black; /* Black font color on hover */
 }
 
+/* Main Content */
+.main-content {
+    padding: 20px;
+    color: black; /* Black font for main content */
+}
+
+/* Buttons */
+button {
+    background-color: #4CAF50; /* Green button color */
+    color: white; /* White font color for buttons */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #66BB6A; /* Lighter green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+}
