@@ -13,8 +13,8 @@ def show_crops():
 
 @app.route('/livestock')
 def show_livestock():
-    livestock = Livestock.query.all()
-    return render_template('livestock.html', livestock=livestock)
+    livestocks = Livestock.query.all()
+    return render_template('livestock.html', livestocks=livestocks)
 
 @app.route('/market-prices')
 def show_market_prices():
