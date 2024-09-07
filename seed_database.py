@@ -1,8 +1,11 @@
 # seed/seed_database.py
 
-from app import db
+from app import create_app, db
 from app.models import Crop, Livestock, MarketPrice, FarmingTip, WeatherForecast
 from datetime import date
+
+app = create_app()  # Create an app instance
+app.app_context().push()  # Push the app context
 
 # Sample data
 crops = [
@@ -74,12 +77,13 @@ weather_forecasts = [
 ]
 
 # Add all the sample data to the session
-db.session.add_all(crops + livestock + market_prices + farming_tips + weather_forecasts)
+with app.app_context():
+    db.session.add_all(crops + livestock + market_prices + farming_tips + weather_forecasts)
 
-# Commit the session to save the data to the database
-try:
-    db.session.commit()
-    print("Database seeded successfully with Nigerian-specific data!")
-except Exception as e:
-    db.session.rollback()  # Rollback in case of an error
-    print(f"An error occurred: {e}")
+    # Commit the session to save the data to the database
+    try:
+        db.session.commit()
+        print("Database seeded successfully with Nigerian-specific data!")
+    except Exception as e:
+        db.session.rollback()  # Rollback in case of an error
+        print(f"An error occurred: {e}")
