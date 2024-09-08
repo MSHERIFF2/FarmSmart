@@ -4,11 +4,19 @@
 
 {% block content %}
 	<h2>Livestock List</h2>
-	<ul>
+	<table>
+		<tr> 
+			<th> No. </th>
+			<th> Livestocks </th>
+			<th> Prices </th>
+		</tr>
 		{% for livestock in livestocks %}
-		<li>
-			{{ livestock.name }} - {{ livestock.market_price.price }}
-		</li>
+		
+		<tr>
+			<td>{{ livestock.id }} </td>
+			<td> {{ livestock.name }}</td>
+			<td>NGN {{ livestock_prices[livestock.id] if livestock.id in livestock_prices else '0.0' }}
+		</tr>
 		{% endfor %}
-	</ul>
+	</table>
 {% endblock %}

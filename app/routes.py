@@ -9,17 +9,17 @@ def home():
 @app.route('/crops')
 def show_crops():
     crops = Crop.query.all()
-    return render_template('crops.html', crops=crops)
+    marketprice = MarketPrice.query.all()
+    crop_prices = {price.crop_id: price.price for price in marketprice}
+    return render_template('crops.html', crops=crops, crop_prices=crop_prices)
 
 @app.route('/livestock')
 def show_livestock():
     livestocks = Livestock.query.all()
-    return render_template('livestock.html', livestocks=livestocks)
+    marketprice = MarketPrice.query.all()
+    livestock_prices = {price.livestock_id: price.price for price in marketprice}
+    return render_template('livestock.html', livestocks=livestocks, livestock_prices=livestock_prices)
 
-@app.route('/market-prices')
-def show_market_prices():
-    prices = MarketPrice.query.all()
-    return render_template('market_prices.html', prices=prices)
 
 @app.route('/farming-tips')
 def show_farming_tips():

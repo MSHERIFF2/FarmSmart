@@ -45,7 +45,7 @@ with app.app_context():
 
     # Create sample market prices
     market_prices = [
-        MarketPrice(crop_id=1, price=130, date=date(2024, 9, 8)),  # Maize
+        MarketPrice(crop_id=1, price=130, date=date(2024, 9, 8)),   # Maize
         MarketPrice(crop_id=2, price=50, date=date(2024, 9, 8)),   # Cassava
         MarketPrice(crop_id=3, price=300, date=date(2024, 9, 8)),  # Yam
         MarketPrice(crop_id=4, price=200, date=date(2024, 9, 8)),  # Rice

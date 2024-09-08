@@ -4,9 +4,20 @@
 {% block content %}
 <h1>FarmSmart</h1>
 <h2>Crops List</h2>
-<ul>
+<table>
+	<tr>
+		<th> No. </th>
+		<th> Crop Name </th>
+		<th> Crop Price </th>
+	</tr>
+	
 	{% for crop in crops %}
-	<li>{{ crop.name }}- {{ crop.market_price.price }}</li>
+	<tr>
+	<td>{{ crop.id }}</td>
+	<td>{{ crop.name }}</td>
+	<td>NGN {{ crop_prices[crop.id] if crop.id in crop_prices else '0.0' }}</td>
+	</tr>
 	{% endfor %}
-</ul>
+	
+</table>
 {% endblock %}

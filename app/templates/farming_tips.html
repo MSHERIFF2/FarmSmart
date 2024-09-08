@@ -8,11 +8,13 @@
 <h2> Farming TIps </h2>
 <ul> 
 	{% for tip in tips %}
-		<li> 
+	<div> 
+		<div>
 			<h3>{{ tip.title }}</h3>
 			<p>{{ tip.content }}</p>
 			<p>Date: {{ tip.date }}</p>
-		</li>
+		</div>
+	</div>
 	{% endfor %}
 </ul>
 
