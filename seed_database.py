@@ -4,6 +4,15 @@ from app import app, db
 from app.models import Crop, Livestock, MarketPrice, FarmingTip, WeatherForecast
 from datetime import date, datetime
 
+
+# Clear existing data
+MarketPrice.query.delete()
+Crop.query.delete()
+Livestock.query.delete()
+FarmingTip.query.delete()
+WeatherForecast.query.delete()
+db.session.commit()
+
 # Create an application context
 with app.app_context():
     # Sample data
