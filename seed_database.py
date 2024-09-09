@@ -4,17 +4,20 @@ from app import app, db
 from app.models import Crop, Livestock, MarketPrice, FarmingTip, WeatherForecast
 from datetime import date, datetime
 
-
-# Clear existing data
-MarketPrice.query.delete()
-Crop.query.delete()
-Livestock.query.delete()
-FarmingTip.query.delete()
-WeatherForecast.query.delete()
-db.session.commit()
-
 # Create an application context
 with app.app_context():
+    # Clear existing data
+    try:
+        MarketPrice.query.delete()
+        Crop.query.delete()
+        Livestock.query.delete()
+        FarmingTip.query.delete()
+        WeatherForecast.query.delete()
+        db.session.commit()
+        print("Existing data cleared.")
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error clearing data: {e}")
     # Sample data
     crops = [
         Crop(name='Maize'),
