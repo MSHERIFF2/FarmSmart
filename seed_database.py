@@ -116,21 +116,21 @@ farming_tips = [
     FarmingTip(title='Monitoring Plant Health', content='Regularly inspect plants for signs of stress or disease to take corrective measures early.', date=current_date)
 ]
 # Create sample weather forecasts
-    weather_forecasts = [
+weather_forecasts = [
         WeatherForecast(forecast_date=current_date, temperature=28.5, condition='Rainy'),
         WeatherForecast(forecast_date=current_date, temperature=34.0, condition='Sunny'),
         WeatherForecast(forecast_date=current_date, temperature=26.0, condition='Cloudy'),
         WeatherForecast(forecast_date=current_date, temperature=22.0, condition='Thunderstorms'),
-        WeatherForecast(forecast_date=current_date, temperature=30.0, condition='Partly cloudy')
+        WeatherForecast(forecast_date=current_date, temperature=30.0, condition='Partly cloudy'),
     ]
 
     # Add all the sample data to the session
-    db.session.add_all(crops + livestock + market_prices + farming_tips + weather_forecasts)
+db.session.add_all(crops + livestock + market_prices + farming_tips + weather_forecasts)
 
     # Commit the session to save the data to the database
-    try:
-        db.session.commit()
-        print("Database seeded successfully with Nigerian-specific data!")
-    except Exception as e:
-        db.session.rollback()  # Rollback in case of an error
-        print(f"An error occurred: {e}")
+try:
+    db.session.commit()
+    print("Database seeded successfully with Nigerian-specific data!")
+except Exception as e:
+    db.session.rollback()  # Rollback in case of an error
+    print(f"An error occurred: {e}")
