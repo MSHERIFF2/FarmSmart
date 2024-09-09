@@ -4,7 +4,7 @@
 
 {% block content %}
    <h2>Weather Forecast</h2>
-   <ul>
+   <ul class="weather_container">
 	   {% for forecast in forecasts %}
 	   <li>Date: {{ forecast.forecast_date }} - Temperature: {{ forecast.temperature }}°C - Condition: {{ forecast.condition }}
 	   </li>
